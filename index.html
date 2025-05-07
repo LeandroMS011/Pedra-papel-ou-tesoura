@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jogo de Pedra, Papel e Tesoura - Imersão DEV Alura">
+    <title>Pedra, Papel ou Tesoura - Imersão DEV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header" role="banner">
+        <img src="https://i.postimg.cc/GpCxYmvc/title.png" 
+             alt="Logo da Imersão DEV - Alura" 
+             class="logo">
+    </header>
+
+    <main class="container" id="main-content" role="main">
+        <article class="content" aria-labelledby="game-title">
+            <h1 id="game-title">Pra ganhar é preciso arriscar!</h1>
+            <p class="subtitle">Escolha sua jogada:</p>
+            
+            <section class="game-area" aria-live="polite">
+
+                <section class="start-screen" id="startScreen">
+                    <button class="play-button" id="startButton" aria-label="Iniciar jogo">
+                        Bora jogar!
+                    </button>
+                </section>
+                
+                <section class="age-screen hidden" id="ageScreen" aria-labelledby="age-title">
+                    <h2 id="age-title" class="sr-only">Verificação de idade</h2>
+                    <label for="ageInput">Qual é a sua idade?</label>
+                    <input type="number" 
+                           id="ageInput" 
+                           min="1" 
+                           max="120" 
+                           placeholder="Digite sua idade"
+                           aria-required="true">
+                    <button class="confirm-button" id="confirmAge">
+                        Confirmar
+                    </button>
+                </section>
+                
+                <section class="game-screen hidden" id="gameScreen" aria-labelledby="choose-title">
+                    <h2 id="choose-title" class="sr-only">Faça sua escolha</h2>
+                    <div class="choices" role="group" aria-labelledby="choose-title">
+                        <button class="choice-btn" data-choice="1" aria-label="Pedra">
+                            <span aria-hidden="true">✊</span> Pedra
+                        </button>
+                        <button class="choice-btn" data-choice="2" aria-label="Papel">
+                            <span aria-hidden="true">✋</span> Papel
+                        </button>
+                        <button class="choice-btn" data-choice="3" aria-label="Tesoura">
+                            <span aria-hidden="true">✌️</span> Tesoura
+                        </button>
+                    </div>
+                </section>
+                
+                <section class="result-screen hidden" id="resultScreen" aria-labelledby="result-title">
+                    <h2 id="result-title" class="sr-only">Resultado do jogo</h2>
+                    <div class="choices-display">
+                        <div class="choice">
+                            <h3>Sua escolha:</h3>
+                            <div class="icon" id="playerChoiceIcon" aria-live="polite"></div>
+                        </div>
+                        <div class="choice">
+                            <h3>Computador:</h3>
+                            <div class="icon" id="computerChoiceIcon" aria-live="polite"></div>
+                        </div>
+                    </div>
+                    <p id="resultText" role="status"></p>
+                    <button class="play-again-btn" id="playAgain">
+                        Jogar novamente
+                    </button>
+                </section>
+                
+                <div class="message hidden" id="ageMessage" role="alert"></div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <p>Alura - Imersão DEV - 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
